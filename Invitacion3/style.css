@@ -1,0 +1,298 @@
+:root {
+    --bg-color: #e2d1e1; 
+    --text-color: #5a5a5a;
+    --accent-font: 'Pinyon Script', cursive;
+    --main-font: 'Montserrat', sans-serif;
+    --white-pure: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: var(--main-font);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('portada-regina.jpg') no-repeat center center/cover;
+    background-size: cover;
+    background-position: center top; /* Prioriza la parte superior */
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+
+
+.hero h1 {
+    font-family: var(--accent-font);
+    font-size: clamp(4rem, 15vw, 7rem); /* Adaptativo */
+    margin: 10px 0;
+    font-weight: 400;
+}
+.date-hero,.time-hero {
+    font-family: 'BJ Cree', sans-serif;
+    font-weight: 400;
+    font-size: 1.8rem; 
+}
+
+/* .subtitle {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 1.2rem;
+} */
+
+.subtitle {
+    font-family: 'BJ Cree', sans-serif;
+    font-weight: 300;           /* Peso ligero para que se vea elegante */
+    text-transform: uppercase;   /* Siempre en mayúsculas */
+    letter-spacing: 8px;        /* MUCHO espacio entre letras como en la foto */
+    font-size: 1.8rem;          /* Tamaño moderado */
+    color: rgba(255, 255, 255, 0.9); /* Blanco con ligera transparencia */
+    margin-bottom: 0;           /* Pegado al nombre Regina */
+}
+
+.event-content p{
+    font-family: 'Pinyon Script', cursive;
+    color: black;
+    font-size: 1.4rem; 
+    margin: 0;
+}
+
+/* --- ITINERARIO (Zig-Zag como la imagen) --- */
+.itinerary h2 {
+    font-family: "Great Vibes", cursive;
+    font-size: 3.5rem;
+    margin: 50px 0 30px;
+}
+.itinerary {
+    padding: 60px 20px;
+    background-color: var(--bg-color);
+}
+
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* .timeline {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+} */
+
+/* .event {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+} */
+/* La línea vertical central que une los iconos */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 100%;
+    background-color: rgba(204, 48, 144, 0.2); /* Línea sutil */
+    z-index: 1;
+}
+
+.event {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.event-content {
+    flex: 1;
+    padding: 0 20px;
+}
+.event-icon {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+/* Alineación para la izquierda */
+.event.left .event-content {
+    text-align: right;
+}
+
+/* Alineación para la derecha */
+.event.right .event-content {
+    text-align: left;
+}
+
+/* Alternancia de izquierda y derecha */
+.event:nth-child(odd) { align-items: flex-start; text-align: left; padding-left: 15%; }
+.event:nth-child(even) { align-items: flex-end; text-align: right; padding-right: 15%; }
+
+/* .time {
+    font-family: 'BJ Cree', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: black;
+} */
+.time {
+    display: block;
+    font-family: 'BJ Cree', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: black;
+}
+
+
+/* .event p { margin: 0; font-size: 0.95rem; } */
+
+/* --- FOTO FRAME (Efecto Polaroid) --- */
+.photo-frame {
+    background: var(--white-pure);
+    padding: 15px 15px 50px 15px; /* Espacio extra abajo como la imagen */
+    display: inline-block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    margin: 40px 0;
+}
+
+.photo-frame img {
+    width: 455px;
+    height: auto;
+    display: block;
+}
+
+/* --- CONTADOR --- */
+.timer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #f5ece4; /* Color crema de la imagen */
+    padding: 30px 10px;
+    margin: 50px 0;
+}
+
+.unit { min-width: 70px; }
+.unit span {
+    font-size: 2.2rem;
+    font-weight: 300;
+    display: block;
+    color: #4a4a4a;
+}
+.unit p {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+/* --- INFO SECTIONS --- */
+.dress-code h3, .gifts h3 {
+    font-family:'Pinyon Script', cursive;
+    font-size: 2.8rem;
+}
+.gifts p {
+    font-family: 'BJ Cree', sans-serif;
+    color: black;
+}
+
+.dress-code .bold {
+    font-family: 'BJ Cree', sans-serif;
+    color: black;
+    display: block;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+}
+.dress-code p {
+    font-family: 'BJ Cree', sans-serif;
+    font-size: 1.4rem;
+    color: black;
+    margin-top: 0;
+}
+.dress-code a {
+    color: black;
+/*     text-decoration: none;
+ */}
+.icon-large {
+    font-size: 50px; /* Ajusta el valor a tu gusto */
+}
+
+/* --- BOTONES Y LINKS --- */
+.btn-calendar {
+    background: var(--white-pure);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 4px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.btn-calendar:hover { transform: translateY(-2px); }
+
+@media (min-width: 1024px) {
+    .hero {
+        /* Ajustamos el enfoque un poco más abajo si es necesario, 
+           o aseguramos que la altura sea suficiente */
+        background-position: center 40%; 
+        min-height: 120vh; /* Le damos más aire vertical en escritorio */
+    }
+}
+
+/* Mobile: En celulares quitamos el zigzag para que se lea mejor */
+/* Este código solo se ejecutará en pantallas menores a 600px */
+@media (max-width: 600px) {
+    /* Movemos la línea vertical a la izquierda */
+    .timeline::before {
+        left: 36px; 
+        transform: none;
+    }
+
+    .event {
+        flex-direction: row !important; /* Forzamos que siempre sea fila */
+        align-items: center;
+        text-align: left !important;
+        padding-left: 10px;
+    }
+
+    /* Quitamos el espacio vacío de la derecha en móvil */
+    .event-spacer {
+        display: none; 
+    }
+
+    /* Forzamos que el icono siempre sea lo primero a la izquierda */
+    .event-icon {
+        order: 1; 
+        margin-right: 20px;
+        margin-left: 10px;
+        min-width: 40px; /* Evita que se encoja */
+    }
+
+    /* Forzamos que el texto sea lo segundo */
+    .event-content {
+        order: 2;
+        text-align: left !important;
+        padding: 0;
+    }
+
+    /* Ajuste de márgenes para que no choquen con la línea */
+    .event.left, .event.right {
+        padding-left: 10px;
+        padding-right: 0;
+    }
+}
